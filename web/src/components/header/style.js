@@ -25,9 +25,27 @@ li{
  
 }
 li img{
-    width: 100px;
+    max-width: 100px;
+    width: 100%;
     border-radius: 0px 10px 0px 10px;
 }
+@media (max-width: 500px) {
+    ul{
+        justify-content: space-between;
+        padding: 0;
+ 
+    }
+   
+    li{
+      font-size  :14px ;
+      font-weight: bold;
+    }
+  
+  
+}
+
+ 
+ 
  .contato{
     background-color:${Colors.verde};
     border-radius: 10px;
@@ -37,24 +55,32 @@ li img{
     position: relative;
     display: flex;
     background-color: ${Colors.branco};
-    width: 50%;
+    width: 80%;
     padding: 5px;
-    margin: 10px;
-    left: 50%;
+    margin: 20px;
+    z-index: 999;
+     
     left: 50%;
     transform: translate(-50%, -50%);
-    top: 50px;
+    top: 130px;
+    
      
 
 }
 .modal-content{
-    width: 100vh;
-
+    width: 100%;
 }
+.modal-content p{
+    position: relative;
+    text-align: center;
+}
+ 
 .close{
     display: flex;
     justify-content: end;
     color: red;
+    font-weight: bold;
 }
+ 
 `
  
