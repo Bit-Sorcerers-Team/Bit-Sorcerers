@@ -2,13 +2,17 @@ import styled from 'styled-components';
 import Colors  from '../colors';
 
 export const StyleComponents = styled.div`
+ 
+
 
 ul{
+    position: relative;
 display: flex;
 justify-content:space-between;
 align-items: center;
 background-color: ${Colors.branco};
-padding-top: 5px;
+padding-top: 0px;
+top: -20px;
 }
 
 li{
@@ -52,7 +56,7 @@ li img{
     padding: 5px;
  }
 .modal{
-    position: relative;
+    position: absolute;
     display: flex;
     background-color: ${Colors.branco};
     width: 80%;
@@ -62,7 +66,9 @@ li img{
      
     left: 50%;
     transform: translate(-50%, -50%);
-    top: 130px;
+    top: 200px;
+    border: 1px solid black;
+    border-radius: 50px 0px ;
     
      
 
@@ -80,6 +86,7 @@ li img{
     justify-content: end;
     color: red;
     font-weight: bold;
+    font-size: 30px;
 }
  
 `

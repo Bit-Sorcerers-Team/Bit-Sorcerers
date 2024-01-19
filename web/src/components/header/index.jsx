@@ -69,6 +69,12 @@ function Header() {
           <div className="modal-content">
             <span className="close" onClick={closeContatoModal}>&times;</span>
             <p>Conteúdo do modal de Contato</p>
+            <p>Conteúdo do modal de Serviços</p>
+            <p>Conteúdo do modal de Serviços</p>
+            <p>Conteúdo do modal de Serviços</p>
+            <p>Conteúdo do modal de Serviços</p>
+            <p>Conteúdo do modal de Serviços</p>
+            <p>Conteúdo do modal de Serviços</p>
           </div>
         </div>
       )}

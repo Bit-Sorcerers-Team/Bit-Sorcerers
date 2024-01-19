@@ -4,6 +4,7 @@ html, body {
   padding: 0;
   border: 0;
   height: 98.8%;
+  top: 0px;
 
 }
 
@@ -13,6 +14,11 @@ body {
               linear-gradient(127deg, #00ff0059, rgba(255, 209, 2, 0.253) 70.71%),
               linear-gradient(336deg, #ffd900cc, rgba(255, 174, 0, 0.418) 70.71%);
   background-attachment: fixed;
+
+
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 300;
+  font-style: normal;
 }
 
 

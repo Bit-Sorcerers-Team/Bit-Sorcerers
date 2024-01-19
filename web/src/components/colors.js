@@ -5,7 +5,7 @@ const Colors = {
   laranja: 'rgba(255, 165, 0, 0.8)',
   amarelo: 'rgba(255, 255, 0, 0.8)',
   azul: 'rgba(0, 0, 255, 0.8)',
-  branco: 'rgba(255, 255, 255, 0.8)',
+  branco: 'rgba(255, 255, 255, 1)',
   preto: 'rgba(0, 0, 0, 0.8)',
   rosa: 'rgba(255, 105, 180, 0.8)',
   roxo: 'rgba(128, 0, 128, 0.8)',
