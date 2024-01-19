@@ -19,6 +19,8 @@ repositório principal do site da empresa.
 Uma explicação detalhada sobre o que é o seu projeto, seu propósito e suas principais características.
 
 Projeto criado em React.Js 
+estilo utiliza styled-components
+
 
 ## Funcionalidades
 
