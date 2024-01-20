@@ -23,21 +23,36 @@ export const StyleComponents = styled.div`
     transform: translate(-50%  );
     border-radius:  0px 40px;
     top: -50px;
-    color: ${Colors.cinza};
+    color: ${Colors.branco};
     font-size: 20px;
     
     
 }
 .banner h1 {
     padding: 20px;
-    background-color: ${Colors.lavanda};
+    background-color: ${Colors.preto};
 }
 
 
 @media (max-width: 560px) {
     .banner h1 {
-    font-size: 12px; 
+        position: relative;
+        top: 50px;
+        padding: 40px;
+    font-size: 25px; 
   }
+ 
+    .banner {
+     background-size: cover; /* Ajusta o tamanho da imagem para cobrir completamente o elemento */
+    background-position: center; /* Centraliza a imagem */
+    width: 100%;
+    height: 450px;
+    border-radius: 0px 40px;
+    top: -50px;
+    color: ${Colors.branco};
+    font-size: 20px;
 }
+  }
+ 
 `
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyleComponents } from './style';
-import laptop from '../../img/laptop.png'
- 
+import Orcamento from '../botao/botaoOrcamento';
+  
 export default function Banner (){
 
     return(
@@ -10,8 +10,9 @@ export default function Banner (){
              
 
           <h1>Transformamos ideias em realidade digital.
-        <h3> Bit Sorcerers: Software Sob Medida para o seu sucesso único.</h3></h1>
+        <h3> Bit Sorcerers: Software Sob Medida para o seu sucesso único.</h3><Orcamento/></h1>
          </div>
+         
         </StyleComponents>
     )
 }
