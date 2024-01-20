@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { StyleComponents } from './style';
 import logo from '../../img/logo.jpg';
 
 function Header() {
-  // Estados para controlar a abertura e o fechamento de cada modal
+  const modalRef = useRef(null);
+
   const [servicosModalOpen, setServicosModalOpen] = useState(false);
   const [sobreNosModalOpen, setSobreNosModalOpen] = useState(false);
   const [contatoModalOpen, setContatoModalOpen] = useState(false);
 
-  // Funções para abrir e fechar cada modal
   const openServicosModal = () => setServicosModalOpen(true);
   const closeServicosModal = () => setServicosModalOpen(false);
 
@@ -18,6 +18,26 @@ function Header() {
   const openContatoModal = () => setContatoModalOpen(true);
   const closeContatoModal = () => setContatoModalOpen(false);
 
+  const handleOutsideClick = (event) => {
+    if (
+      modalRef.current &&
+      !modalRef.current.contains(event.target) &&
+      !event.target.closest('.modal-trigger') // Evita fechar o modal se clicar no elemento que o abre
+    ) {
+      closeServicosModal();
+      closeSobreNosModal();
+      closeContatoModal();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleOutsideClick);
+
+    return () => {
+      document.removeEventListener('click', handleOutsideClick);
+    };
+  }, [servicosModalOpen, sobreNosModalOpen, contatoModalOpen]);
+
   return (
     <StyleComponents>
       <ul>
@@ -25,16 +45,16 @@ function Header() {
           <img src={logo} alt="Logo de folha verde e laranja 'Green and orange leaf logo.'" />
         </li>
         <li><a>Home</a></li>
-        <li onClick={openServicosModal}>Serviços</li>
-        <li onClick={openSobreNosModal}>Sobre Nós</li>
+        <li onClick={openServicosModal} className="modal-trigger">Serviços</li>
+        <li onClick={openSobreNosModal} className="modal-trigger">Sobre Nós</li>
         <li></li>
-        <li className="contato" onClick={openContatoModal}>Contato</li>
+        <li className="contato modal-trigger" onClick={openContatoModal}>Contato</li>
         <li></li>
       </ul>
 
       {/* Modal de Serviços */}
       {servicosModalOpen && (
-        <div className="modal">
+        <div className="modal" ref={modalRef}>
           <div className="modal-content">
             <span className="close" onClick={closeServicosModal}>&times;</span>
             <p>Conteúdo do modal de Serviços</p>
@@ -43,38 +63,49 @@ function Header() {
             <p>Conteúdo do modal de Serviços</p>
             <p>Conteúdo do modal de Serviços</p>
             <p>Conteúdo do modal de Serviços</p>
-          </div>
+            <p>Conteúdo do modal de Serviços</p>
+            <p>Conteúdo do modal de Serviços</p>
+           </div>
         </div>
       )}
 
       {/* Modal de Sobre Nós */}
       {sobreNosModalOpen && (
-        <div className="modal">
+        <div className="modal" ref={modalRef}>
           <div className="modal-content">
             <span className="close" onClick={closeSobreNosModal}>&times;</span>
             <p>Conteúdo do modal de Sobre Nós</p>
-            <p>Conteúdo do modal de Serviços</p>
-            <p>Conteúdo do modal de Serviços</p>
-            <p>Conteúdo do modal de Serviços</p>
-            <p>Conteúdo do modal de Serviços</p>
-            <p>Conteúdo do modal de Serviços</p>
-            <p>Conteúdo do modal de Serviços</p>
-          </div>
+            <p>Conteúdo do modal de Sobre Nós</p>
+            <p>Conteúdo do modal de Sobre Nós</p>
+
+            <p>Conteúdo do modal de Sobre Nós</p>
+            <p>Conteúdo do modal de Sobre Nós</p>
+
+            <p>Conteúdo do modal de Sobre Nós</p>
+            <p>Conteúdo do modal de Sobre Nós</p>
+
+            <p>Conteúdo do modal de Sobre Nós</p>
+
+           </div>
         </div>
       )}
 
       {/* Modal de Contato */}
       {contatoModalOpen && (
-        <div className="modal">
+        <div className="modal" ref={modalRef}>
           <div className="modal-content">
             <span className="close" onClick={closeContatoModal}>&times;</span>
             <p>Conteúdo do modal de Contato</p>
-            <p>Conteúdo do modal de Serviços</p>
-            <p>Conteúdo do modal de Serviços</p>
-            <p>Conteúdo do modal de Serviços</p>
-            <p>Conteúdo do modal de Serviços</p>
-            <p>Conteúdo do modal de Serviços</p>
-            <p>Conteúdo do modal de Serviços</p>
+            <p>Conteúdo do modal de Contato</p>
+            <p>Conteúdo do modal de Contato</p>
+            <p>Conteúdo do modal de Contato</p>
+
+            <p>Conteúdo do modal de Contato</p>
+            <p>Conteúdo do modal de Contato</p>
+
+            <p>Conteúdo do modal de Contato</p>
+
+             
           </div>
         </div>
       )}

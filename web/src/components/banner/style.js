@@ -16,9 +16,9 @@ export const StyleComponents = styled.div`
 .banner{
     position: relative;
     color: white;
-     background-image: url(${laptop});
+    background-image: url(${laptop});
     width: 100%;
-    height: 450px;
+    height: 460px;
     left: 50%;
     transform: translate(-50%  );
     border-radius:  0px 40px;
@@ -32,21 +32,26 @@ export const StyleComponents = styled.div`
     padding: 20px;
     background-color: ${Colors.preto};
 }
+@media (max-width: 790px) {
+    .banner h1 {
+      padding: 0px;
+    }
+  }
 
 
 @media (max-width: 560px) {
     .banner h1 {
         position: relative;
-        top: 50px;
-        padding: 40px;
-    font-size: 25px; 
-  }
- 
+        top: 0px;
+        padding:30px;
+    font-size: 20px; 
+
+  } 
     .banner {
      background-size: cover; /* Ajusta o tamanho da imagem para cobrir completamente o elemento */
     background-position: center; /* Centraliza a imagem */
     width: 100%;
-    height: 450px;
+    height: 300px;
     border-radius: 0px 40px;
     top: -50px;
     color: ${Colors.branco};

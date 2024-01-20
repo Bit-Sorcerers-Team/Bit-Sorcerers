@@ -31,4 +31,13 @@ export const StyleComponents = styled.div`
     animation: ${moveUpDown} 2s linear infinite;
 
   }
+  @media (max-width: 768px) {
+    margin-top: -80px;  
+
+li{
+  font-size: 12px;
+  
+}
+    
+  }
 `;
