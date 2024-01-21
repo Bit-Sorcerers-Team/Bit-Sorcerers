@@ -43,11 +43,16 @@ function Header({imagem}) {
         <li>
           <img src={imagem} alt="Logo de folha verde e laranja 'Green and orange leaf logo.'" />
         </li>
-        <li><a>Home</a></li>
-        <li onClick={openServicosModal} className="modal-trigger">Serviços</li>
-        <li onClick={openSobreNosModal} className="modal-trigger">Sobre Nós</li>
+        <li onClick={openServicosModal} className="modal-trigger">Blog</li>
+
+        <li onClick={openServicosModal} className="modal-trigger">Contato</li>
+
+        <li onClick={openServicosModal} className="modal-trigger">Portifólio</li>
+        <li onClick={openSobreNosModal} className="modal-trigger">Serviços</li>
+
+        <li onClick={openSobreNosModal} className="modal-trigger">Sobre</li>
         <li></li>
-        <li className="contato modal-trigger" onClick={openContatoModal}>Contato</li>
+       {/*<li className="contato modal-trigger" onClick={openContatoModal}></li>*/} 
         <li></li>
       </ul>
 
