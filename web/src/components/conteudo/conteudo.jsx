@@ -4,7 +4,8 @@ import { StyleComponents } from './style';
 export default function Conteudo({ imagem }) {
   return (
     <StyleComponents>
-      <h3>Sobre</h3>
+      <h3>Tenha um software adaptado às suas necessidades!
+</h3>
       <ul>
         <li>
           <p>
