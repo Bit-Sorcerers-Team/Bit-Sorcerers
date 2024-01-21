@@ -70,6 +70,13 @@ function Header({ imagem }) {
           <div className="modal-content">
             <span className="close" onClick={closeBlogModal}>&times;</span>
             <p>Conteúdo do modal de Blog</p>
+            <p>Conteúdo do modal de Blog</p>
+            <p>Conteúdo do modal de Blog</p>
+            <p>Conteúdo do modal de Blog</p>
+            <p>Conteúdo do modal de Blog</p>
+            <p>Conteúdo do modal de Blog</p>
+            <p>Conteúdo do modal de Blog</p>
+            <p>Conteúdo do modal de Blog</p>
             {/* Adicione aqui o conteúdo específico para a seção de Blog */}
           </div>
         </div>
@@ -80,6 +87,13 @@ function Header({ imagem }) {
         <div className="modal" ref={modalRef}>
           <div className="modal-content">
             <span className="close" onClick={closeContatoModal}>&times;</span>
+            <p>Conteúdo do modal de Contato</p>
+            <p>Conteúdo do modal de Contato</p>
+            <p>Conteúdo do modal de Contato</p>
+            <p>Conteúdo do modal de Contato</p>
+            <p>Conteúdo do modal de Contato</p>
+            <p>Conteúdo do modal de Contato</p>
+            <p>Conteúdo do modal de Contato</p>
             <p>Conteúdo do modal de Contato</p>
             {/* Adicione aqui o conteúdo específico para a seção de Contato */}
           </div>
@@ -92,6 +106,13 @@ function Header({ imagem }) {
           <div className="modal-content">
             <span className="close" onClick={closePortfolioModal}>&times;</span>
             <p>Conteúdo do modal de Portfólio</p>
+            <p>Conteúdo do modal de Portfólio</p>
+            <p>Conteúdo do modal de Portfólio</p>
+            <p>Conteúdo do modal de Portfólio</p>
+            <p>Conteúdo do modal de Portfólio</p>
+            <p>Conteúdo do modal de Portfólio</p>
+            <p>Conteúdo do modal de Portfólio</p>
+            <p>Conteúdo do modal de Portfólio</p>
             {/* Adicione aqui o conteúdo específico para a seção de Portfólio */}
           </div>
         </div>
@@ -103,6 +124,13 @@ function Header({ imagem }) {
           <div className="modal-content">
             <span className="close" onClick={closeServicosModal}>&times;</span>
             <p>Conteúdo do modal de Serviços</p>
+            <p>Conteúdo do modal de Serviços</p>
+            <p>Conteúdo do modal de Serviços</p>
+            <p>Conteúdo do modal de Serviços</p>
+            <p>Conteúdo do modal de Serviços</p>
+            <p>Conteúdo do modal de Serviços</p>
+            <p>Conteúdo do modal de Serviços</p>
+            <p>Conteúdo do modal de Serviços</p>
             {/* Adicione aqui o conteúdo específico para a seção de Serviços */}
           </div>
         </div>
@@ -113,7 +141,20 @@ function Header({ imagem }) {
         <div className="modal" ref={modalRef}>
           <div className="modal-content">
             <span className="close" onClick={closeSobreModal}>&times;</span>
-            <p>Conteúdo do modal de Sobre</p>
+            <p><a href="#">Conteúdo do modal de Sobre</a></p>
+            <p><a href="#">Conteúdo do modal de Sobre</a></p>     
+            <p><a href="#">Conteúdo do modal de Sobre</a></p>
+            <p><a href="#">Conteúdo do modal de Sobre</a></p>
+
+
+            <p><a href="#">Conteúdo do modal de Sobre</a></p>
+
+            <p><a href="#">Conteúdo do modal de Sobre</a></p>
+
+           
+
+
+
             {/* Adicione aqui o conteúdo específico para a seção de Sobre */}
           </div>
         </div>
