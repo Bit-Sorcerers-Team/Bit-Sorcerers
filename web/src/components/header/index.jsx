@@ -1,8 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { StyleComponents } from './style';
-import logo from '../../img/logo.jpg';
 
-function Header() {
+function Header({imagem}) {
   const modalRef = useRef(null);
 
   const [servicosModalOpen, setServicosModalOpen] = useState(false);
@@ -42,7 +41,7 @@ function Header() {
     <StyleComponents>
       <ul>
         <li>
-          <img src={logo} alt="Logo de folha verde e laranja 'Green and orange leaf logo.'" />
+          <img src={imagem} alt="Logo de folha verde e laranja 'Green and orange leaf logo.'" />
         </li>
         <li><a>Home</a></li>
         <li onClick={openServicosModal} className="modal-trigger">Serviços</li>

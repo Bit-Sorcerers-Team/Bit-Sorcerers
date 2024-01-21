@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import Colors  from '../colors';
-import laptop from '../../img/laptop.png'
 
 
 
@@ -8,7 +7,7 @@ export const StyleComponents = styled.div`
     display: flex;
     position: relative;
     width: 100%;
-    
+    max-height: 550px;
     text-align: center;
     align-items: center;
 
@@ -16,8 +15,7 @@ export const StyleComponents = styled.div`
 .banner{
     position: relative;
     color: white;
-    background-image: url(${laptop});
-    width: 100%;
+     width: 100%;
     height: 460px;
     left: 50%;
     transform: translate(-50%  );
@@ -28,6 +26,15 @@ export const StyleComponents = styled.div`
     
     
 }
+img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+     overflow: hidden;
+    object-fit: cover; /* Corta a imagem para preencher todo o espaço sem distorção */
+    top: -50px;
+    z-index: -1;
+  }
 .banner h1 {
     padding: 20px;
     background-color: ${Colors.preto};

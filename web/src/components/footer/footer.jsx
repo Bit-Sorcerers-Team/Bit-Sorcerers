@@ -4,7 +4,7 @@ import { Direitos, FooterContainer } from './style';
 import logo from '../../img/logo.jpg'
   
 
-export default function Footer (){
+export default function Footer ({imagem}){
     return(
         <>
         <FooterContainer>
@@ -32,7 +32,7 @@ export default function Footer (){
                 </ul>
 
                 <ul>
-                  <li><img src={logo} alt="Logo" /></li>
+                  <li><img src={imagem} alt="Logo" /></li>
                 </ul>
 
                 
