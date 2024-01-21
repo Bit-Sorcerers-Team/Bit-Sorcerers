@@ -1,21 +1,29 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { StyleComponents } from './style';
 
-function Header({imagem}) {
+function Header({ imagem }) {
   const modalRef = useRef(null);
 
-  const [servicosModalOpen, setServicosModalOpen] = useState(false);
-  const [sobreNosModalOpen, setSobreNosModalOpen] = useState(false);
+  const [blogModalOpen, setBlogModalOpen] = useState(false);
   const [contatoModalOpen, setContatoModalOpen] = useState(false);
+  const [portfolioModalOpen, setPortfolioModalOpen] = useState(false);
+  const [servicosModalOpen, setServicosModalOpen] = useState(false);
+  const [sobreModalOpen, setSobreModalOpen] = useState(false);
+
+  const openBlogModal = () => setBlogModalOpen(true);
+  const closeBlogModal = () => setBlogModalOpen(false);
+
+  const openContatoModal = () => setContatoModalOpen(true);
+  const closeContatoModal = () => setContatoModalOpen(false);
+
+  const openPortfolioModal = () => setPortfolioModalOpen(true);
+  const closePortfolioModal = () => setPortfolioModalOpen(false);
 
   const openServicosModal = () => setServicosModalOpen(true);
   const closeServicosModal = () => setServicosModalOpen(false);
 
-  const openSobreNosModal = () => setSobreNosModalOpen(true);
-  const closeSobreNosModal = () => setSobreNosModalOpen(false);
-
-  const openContatoModal = () => setContatoModalOpen(true);
-  const closeContatoModal = () => setContatoModalOpen(false);
+  const openSobreModal = () => setSobreModalOpen(true);
+  const closeSobreModal = () => setSobreModalOpen(false);
 
   const handleOutsideClick = (event) => {
     if (
@@ -23,9 +31,11 @@ function Header({imagem}) {
       !modalRef.current.contains(event.target) &&
       !event.target.closest('.modal-trigger') // Evita fechar o modal se clicar no elemento que o abre
     ) {
-      closeServicosModal();
-      closeSobreNosModal();
+      closeBlogModal();
       closeContatoModal();
+      closePortfolioModal();
+      closeServicosModal();
+      closeSobreModal();
     }
   };
 
@@ -35,7 +45,7 @@ function Header({imagem}) {
     return () => {
       document.removeEventListener('click', handleOutsideClick);
     };
-  }, [servicosModalOpen, sobreNosModalOpen, contatoModalOpen]);
+  }, [blogModalOpen, contatoModalOpen, portfolioModalOpen, servicosModalOpen, sobreModalOpen]);
 
   return (
     <StyleComponents>
@@ -43,54 +53,25 @@ function Header({imagem}) {
         <li>
           <img src={imagem} alt="Logo de folha verde e laranja 'Green and orange leaf logo.'" />
         </li>
-        <li onClick={openServicosModal} className="modal-trigger">Blog</li>
+        <li onClick={openBlogModal} className="modal-trigger">Blog</li>
 
-        <li onClick={openServicosModal} className="modal-trigger">Contato</li>
+        <li onClick={openContatoModal} className="modal-trigger">Contato</li>
 
-        <li onClick={openServicosModal} className="modal-trigger">Portifólio</li>
-        <li onClick={openSobreNosModal} className="modal-trigger">Serviços</li>
+        <li onClick={openPortfolioModal} className="modal-trigger">Portfólio</li>
+        <li onClick={openServicosModal} className="modal-trigger">Serviços</li>
 
-        <li onClick={openSobreNosModal} className="modal-trigger">Sobre</li>
-        <li></li>
-       {/*<li className="contato modal-trigger" onClick={openContatoModal}></li>*/} 
+        <li onClick={openSobreModal} className="modal-trigger">Sobre</li>
         <li></li>
       </ul>
 
-      {/* Modal de Serviços */}
-      {servicosModalOpen && (
+      {/* Modal de Blog */}
+      {blogModalOpen && (
         <div className="modal" ref={modalRef}>
           <div className="modal-content">
-            <span className="close" onClick={closeServicosModal}>&times;</span>
-            <p>Conteúdo do modal de Serviços</p>
-            <p>Conteúdo do modal de Serviços</p>
-            <p>Conteúdo do modal de Serviços</p>
-            <p>Conteúdo do modal de Serviços</p>
-            <p>Conteúdo do modal de Serviços</p>
-            <p>Conteúdo do modal de Serviços</p>
-            <p>Conteúdo do modal de Serviços</p>
-            <p>Conteúdo do modal de Serviços</p>
-           </div>
-        </div>
-      )}
-
-      {/* Modal de Sobre Nós */}
-      {sobreNosModalOpen && (
-        <div className="modal" ref={modalRef}>
-          <div className="modal-content">
-            <span className="close" onClick={closeSobreNosModal}>&times;</span>
-            <p>Conteúdo do modal de Sobre Nós</p>
-            <p>Conteúdo do modal de Sobre Nós</p>
-            <p>Conteúdo do modal de Sobre Nós</p>
-
-            <p>Conteúdo do modal de Sobre Nós</p>
-            <p>Conteúdo do modal de Sobre Nós</p>
-
-            <p>Conteúdo do modal de Sobre Nós</p>
-            <p>Conteúdo do modal de Sobre Nós</p>
-
-            <p>Conteúdo do modal de Sobre Nós</p>
-
-           </div>
+            <span className="close" onClick={closeBlogModal}>&times;</span>
+            <p>Conteúdo do modal de Blog</p>
+            {/* Adicione aqui o conteúdo específico para a seção de Blog */}
+          </div>
         </div>
       )}
 
@@ -100,16 +81,40 @@ function Header({imagem}) {
           <div className="modal-content">
             <span className="close" onClick={closeContatoModal}>&times;</span>
             <p>Conteúdo do modal de Contato</p>
-            <p>Conteúdo do modal de Contato</p>
-            <p>Conteúdo do modal de Contato</p>
-            <p>Conteúdo do modal de Contato</p>
+            {/* Adicione aqui o conteúdo específico para a seção de Contato */}
+          </div>
+        </div>
+      )}
 
-            <p>Conteúdo do modal de Contato</p>
-            <p>Conteúdo do modal de Contato</p>
+      {/* Modal de Portfólio */}
+      {portfolioModalOpen && (
+        <div className="modal" ref={modalRef}>
+          <div className="modal-content">
+            <span className="close" onClick={closePortfolioModal}>&times;</span>
+            <p>Conteúdo do modal de Portfólio</p>
+            {/* Adicione aqui o conteúdo específico para a seção de Portfólio */}
+          </div>
+        </div>
+      )}
 
-            <p>Conteúdo do modal de Contato</p>
+      {/* Modal de Serviços */}
+      {servicosModalOpen && (
+        <div className="modal" ref={modalRef}>
+          <div className="modal-content">
+            <span className="close" onClick={closeServicosModal}>&times;</span>
+            <p>Conteúdo do modal de Serviços</p>
+            {/* Adicione aqui o conteúdo específico para a seção de Serviços */}
+          </div>
+        </div>
+      )}
 
-             
+      {/* Modal de Sobre */}
+      {sobreModalOpen && (
+        <div className="modal" ref={modalRef}>
+          <div className="modal-content">
+            <span className="close" onClick={closeSobreModal}>&times;</span>
+            <p>Conteúdo do modal de Sobre</p>
+            {/* Adicione aqui o conteúdo específico para a seção de Sobre */}
           </div>
         </div>
       )}
